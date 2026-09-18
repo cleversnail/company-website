@@ -44,7 +44,7 @@ function HomePage({ onNavigate, onShowQR }) {
           <span style={{ background: "linear-gradient(135deg, #00f5ff 0%, #8b5cf6 50%, #00ff88 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", backgroundSize: "200% 200%", animation: "gradient-shift 4s ease infinite" }}>AI编程能力</span>
         </h1>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", maxWidth: 560, margin: "0 auto 48px", lineHeight: 1.8 }}>
-          从基础到工程化落地，系统性培养 AI 全栈开发能力。<br />学员覆盖全国重点高校，入职头部互联网企业。
+          从基础到工程化落地，系统性培养 AI 全栈开发能力。<br />学员覆盖多所高校，入职头部互联网企业。
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <button onClick={() => onShowQR("trial")} style={{ padding: "16px 36px", fontSize: 16, fontWeight: 600, color: "#050510", background: "linear-gradient(135deg, #00f5ff, #00d4ff)", borderRadius: 12, border: "none", cursor: "pointer", transition: "all 0.3s ease", boxShadow: "0 0 40px rgba(0,245,255,0.4), 0 8px 32px rgba(0,0,0,0.3)" }}
