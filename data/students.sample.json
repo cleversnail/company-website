@@ -1,0 +1,82 @@
+[
+  {
+    "id": "stu_001",
+    "name": "张同学",
+    "avatar": "/assets/students/stu_001.jpg",
+    "school": "南京大学",
+    "grade": "2026届",
+    "company": "字节跳动",
+    "track": "AI全栈",
+    "tags": ["已入职"]
+  },
+  {
+    "id": "stu_002",
+    "name": "李同学",
+    "avatar": "/assets/students/stu_002.jpg",
+    "school": "华中科技大学",
+    "grade": "大四",
+    "company": "阿里巴巴",
+    "track": "LLM应用开发",
+    "tags": ["已入职"]
+  },
+  {
+    "id": "stu_003",
+    "name": "王同学",
+    "avatar": "/assets/students/stu_003.jpg",
+    "school": "北京邮电大学",
+    "grade": "研一",
+    "company": "腾讯",
+    "track": "AI平台工程",
+    "tags": ["实习转正"]
+  },
+  {
+    "id": "stu_004",
+    "name": "赵同学",
+    "avatar": "/assets/students/stu_004.jpg",
+    "school": "武汉大学",
+    "grade": "2025届",
+    "company": "美团",
+    "track": "AI全栈",
+    "tags": ["已入职"]
+  },
+  {
+    "id": "stu_005",
+    "name": "刘同学",
+    "avatar": "/assets/students/stu_005.jpg",
+    "school": "西安电子科技大学",
+    "grade": "大三",
+    "company": "华为",
+    "track": "MLOps",
+    "tags": ["实习"]
+  },
+  {
+    "id": "stu_006",
+    "name": "陈同学",
+    "avatar": "/assets/students/stu_006.jpg",
+    "school": "同济大学",
+    "grade": "2026届",
+    "company": "小米",
+    "track": "AI产品工程",
+    "tags": ["已入职"]
+  },
+  {
+    "id": "stu_007",
+    "name": "周同学",
+    "avatar": "/assets/students/stu_007.jpg",
+    "school": "中南大学",
+    "grade": "研二",
+    "company": "网易",
+    "track": "LLM应用开发",
+    "tags": ["已入职"]
+  },
+  {
+    "id": "stu_008",
+    "name": "孙同学",
+    "avatar": "/assets/students/stu_008.jpg",
+    "school": "浙江大学",
+    "grade": "大四",
+    "company": "百度",
+    "track": "AI全栈",
+    "tags": ["实习转正"]
+  }
+]

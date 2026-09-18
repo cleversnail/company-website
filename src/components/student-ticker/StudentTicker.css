@@ -1,0 +1,276 @@
+/* =============================================
+   Student Ticker - Dark Tech Theme
+   ============================================= */
+
+.stu-ticker {
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+/* Glow line decoration */
+.stu-ticker::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.4), rgba(139, 92, 246, 0.4), transparent);
+}
+
+.stu-ticker::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.4), rgba(0, 245, 255, 0.4), transparent);
+}
+
+.stu-ticker__header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stu-ticker__title-group {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.stu-ticker__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00f5ff, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stu-ticker__subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.stu-ticker__toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stu-ticker__toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 245, 255, 0.3);
+  color: #00f5ff;
+}
+
+/* Viewport */
+.stu-ticker__viewport {
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+}
+
+/* Track */
+.stu-ticker__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: stuTickerMove var(--duration, 40s) linear infinite;
+}
+
+.stu-ticker__viewport:hover .stu-ticker__track {
+  animation-play-state: paused;
+}
+
+.stu-ticker__viewport[data-paused="true"] .stu-ticker__track {
+  animation-play-state: paused;
+}
+
+.stu-ticker__list {
+  display: flex;
+  gap: 16px;
+  padding: 0 24px;
+}
+
+@keyframes stuTickerMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Student Card - Glassmorphic */
+.stu-card {
+  width: 340px;
+  min-height: 80px;
+  background: rgba(15, 15, 35, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.2, 0.65, 0.3, 0.9);
+}
+
+/* Top glow line */
+.stu-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stu-card:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  background: rgba(20, 20, 50, 0.8);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 245, 255, 0.15), 0 0 60px rgba(0, 245, 255, 0.05);
+}
+
+.stu-card:hover::before {
+  opacity: 1;
+}
+
+/* Avatar */
+.stu-card__left {
+  flex: 0 0 auto;
+}
+
+.stu-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.stu-card__avatar--fallback {
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(139, 92, 246, 0.2));
+  color: #00f5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: var(--font-mono);
+}
+
+/* Content */
+.stu-card__right {
+  min-width: 0;
+  flex: 1;
+}
+
+.stu-card__row1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stu-card__name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stu-card__tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0, 245, 255, 0.15);
+  color: #00f5ff;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.stu-card__row2 {
+  margin-top: 4px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stu-card__dot {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.stu-card__row3 {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.stu-card__label {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.stu-card__company {
+  color: #00f5ff;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .stu-ticker__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .stu-card {
+    width: 280px;
+    min-height: 72px;
+    padding: 12px 14px;
+  }
+  
+  .stu-card__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+}

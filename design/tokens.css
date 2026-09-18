@@ -1,0 +1,136 @@
+/* ==============================================
+   Design Tokens - Ivory / 科技青 (Tech Cyan)
+   Company Website
+   ============================================== */
+
+:root {
+  /* ---- Layout ---- */
+  --page-max-width: 1280px;
+  --content-gutter: 24px;
+
+  /* ---- Spacing (8px scale) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+
+  /* ---- Colors: Base / Surface / Text ---- */
+  --color-bg-page: #FAFAF8;
+  --color-bg-section: #F4F5F7;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #FFFFFF;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+
+  --color-border: #E5E7EB;
+  --color-border-hover: #D1D5DB;
+  --color-divider: #E5E7EB;
+
+  /* ---- Brand: Tech Cyan ---- */
+  --color-accent: #0EA5E9;
+  --color-accent-hover: #0284C7;
+  --color-accent-light: #E0F2FE;
+  --color-accent-lighter: #F0F9FF;
+
+  /* ---- State Colors ---- */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* ---- Typography ---- */
+  --font-family-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-family-cn: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-family-mono: "JetBrains Mono", "IBM Plex Mono", "SF Mono", Menlo, monospace;
+
+  --font-size-display: 52px;
+  --font-size-h1: 40px;
+  --font-size-h2: 32px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-body-lg: 18px;
+  --font-size-body: 16px;
+  --font-size-small: 13px;
+
+  --line-height-heading: 1.2;
+  --line-height-body: 1.7;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --letter-spacing-tight: -0.01em;
+  --letter-spacing-normal: 0em;
+
+  /* ---- Shadow / Elevation ---- */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 6px 24px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+
+  /* ---- Motion ---- */
+  --motion-duration-fast: 180ms;
+  --motion-duration-normal: 240ms;
+  --motion-duration-slow: 300ms;
+  --motion-ease: cubic-bezier(0.2, 0.65, 0.3, 0.9);
+
+  /* ---- Component: Button ---- */
+  --btn-radius: var(--radius-md);
+  --btn-height-sm: 36px;
+  --btn-height-md: 44px;
+  --btn-height-lg: 52px;
+
+  --btn-primary-bg: var(--color-accent);
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-bg-hover: var(--color-accent-hover);
+
+  --btn-secondary-bg: transparent;
+  --btn-secondary-text: var(--color-text-primary);
+  --btn-secondary-border: var(--color-border);
+
+  /* ---- Component: Card ---- */
+  --card-bg: var(--color-surface);
+  --card-border: var(--color-border);
+  --card-shadow: var(--shadow-xs);
+  --card-shadow-hover: var(--shadow-md);
+
+  /* ---- Component: Input ---- */
+  --input-bg: var(--color-surface);
+  --input-border: var(--color-border);
+  --input-focus-border: var(--color-accent);
+  --input-error-border: var(--color-error);
+
+  /* ---- Component: Tag ---- */
+  --tag-bg: #F3F4F6;
+  --tag-text: var(--color-text-primary);
+  --tag-accent-bg: var(--color-accent-light);
+  --tag-accent-text: var(--color-accent);
+}
+
+/* Dark theme placeholder (可选扩展) */
+[data-theme="dark"] {
+  --color-bg-page: #0B0F1A;
+  --color-bg-section: #111827;
+  --color-surface: #161D2B;
+  --color-text-primary: #F3F4F6;
+  --color-text-secondary: #9CA3AF;
+  --color-border: rgba(255,255,255,0.08);
+  --color-accent: #38BDF8;
+  --color-accent-hover: #0EA5E9;
+}
