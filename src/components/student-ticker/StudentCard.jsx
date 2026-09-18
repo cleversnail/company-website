@@ -27,7 +27,7 @@ export default function StudentCard({ student }) {
         {avatar ? (
           <img
             className="stu-card__avatar"
-            src={avatar}
+            src={import.meta.env.BASE_URL + avatar}
             alt={name || "学员头像"}
             loading="lazy"
           />

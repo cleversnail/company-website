@@ -2,6 +2,7 @@ import React, { useState, useMemo, useCallback } from "react";
 import GlassCard from "./GlassCard";
 import StudentPhotoWall from "./StudentPhotoWall";
 import config from "../config/siteConfig.json";
+import teacherQR from "../assets/images/teacher.png";
 const studentsData = config.students;
 
 // ==================== 薪资弹窗 ====================
@@ -17,23 +18,8 @@ export function SalaryModal({ student, onClose }) {
         <button onClick={onClose} style={{ position: "absolute", top: 12, right: 16, width: 32, height: 32, borderRadius: "50%", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.5)", fontSize: 16, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>✕</button>
         <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", marginBottom: 6 }}>薪资详情</div>
         <div style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", marginBottom: 28 }}>{student.name} · {student.company}</div>
-        <div style={{ width: 200, height: 200, margin: "0 auto 24px", borderRadius: 16, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 30px ${accentColor}15` }}>
-          <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
-            <rect x="10" y="10" width="40" height="40" rx="4" fill="#111827" /><rect x="15" y="15" width="30" height="30" rx="2" fill="#fff" /><rect x="20" y="20" width="20" height="20" rx="2" fill="#111827" />
-            <rect x="110" y="10" width="40" height="40" rx="4" fill="#111827" /><rect x="115" y="15" width="30" height="30" rx="2" fill="#fff" /><rect x="120" y="20" width="20" height="20" rx="2" fill="#111827" />
-            <rect x="10" y="110" width="40" height="40" rx="4" fill="#111827" /><rect x="15" y="115" width="30" height="30" rx="2" fill="#fff" /><rect x="20" y="120" width="20" height="20" rx="2" fill="#111827" />
-            <rect x="60" y="10" width="8" height="8" fill="#111827" /><rect x="76" y="10" width="8" height="8" fill="#111827" /><rect x="60" y="26" width="8" height="8" fill="#111827" />
-            <rect x="68" y="18" width="8" height="8" fill="#111827" /><rect x="76" y="26" width="8" height="8" fill="#111827" />
-            <rect x="60" y="60" width="8" height="8" fill="#111827" /><rect x="76" y="60" width="8" height="8" fill="#111827" /><rect x="68" y="68" width="8" height="8" fill="#111827" />
-            <rect x="60" y="76" width="8" height="8" fill="#111827" /><rect x="76" y="76" width="8" height="8" fill="#111827" />
-            <rect x="10" y="60" width="8" height="8" fill="#111827" /><rect x="26" y="60" width="8" height="8" fill="#111827" /><rect x="18" y="68" width="8" height="8" fill="#111827" />
-            <rect x="110" y="60" width="8" height="8" fill="#111827" /><rect x="126" y="60" width="8" height="8" fill="#111827" /><rect x="118" y="68" width="8" height="8" fill="#111827" />
-            <rect x="110" y="76" width="8" height="8" fill="#111827" /><rect x="142" y="68" width="8" height="8" fill="#111827" /><rect x="134" y="76" width="8" height="8" fill="#111827" />
-            <rect x="110" y="110" width="8" height="8" fill="#111827" /><rect x="126" y="110" width="8" height="8" fill="#111827" /><rect x="142" y="110" width="8" height="8" fill="#111827" />
-            <rect x="118" y="118" width="8" height="8" fill="#111827" /><rect x="134" y="118" width="8" height="8" fill="#111827" />
-            <rect x="110" y="126" width="8" height="8" fill="#111827" /><rect x="126" y="126" width="8" height="8" fill="#111827" /><rect x="142" y="126" width="8" height="8" fill="#111827" />
-            <rect x="118" y="134" width="8" height="8" fill="#111827" /><rect x="134" y="134" width="8" height="8" fill="#111827" /><rect x="142" y="142" width="8" height="8" fill="#111827" />
-          </svg>
+        <div style={{ width: 200, height: 200, margin: "0 auto 24px", borderRadius: 16, background: "#fff", overflow: "hidden", boxShadow: `0 0 30px ${accentColor}15`, border: "2px solid rgba(0,245,255,0.2)" }}>
+          <img src={teacherQR} alt="老师微信二维码" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
         </div>
         <div style={{ fontSize: 15, fontWeight: 600, color: accentColor, marginBottom: 6 }}>扫码加入交流群</div>
         <div style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", marginBottom: 24 }}>查看完整薪资信息与学员交流</div>
