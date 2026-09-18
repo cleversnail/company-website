@@ -208,18 +208,18 @@ const features = [
   { icon: "🔄", title: "持续更新", desc: "紧跟 AI 前沿技术，课程内容保持季度迭代更新" },
 ];
 
-export default function CoursePage({ onShowQR }) {
+export default function CoursePage({ onShowQR, isMobile }) {
   const [activePhase, setActivePhase] = useState(0);
 
   return (
     <div style={{ position: "relative", zIndex: 10 }}>
       {/* ① Hero */}
-      <section style={{ maxWidth: 1280, margin: "0 auto", padding: "120px 24px 60px", textAlign: "center" }}>
+      <section style={{ maxWidth: 1280, margin: "0 auto", padding: isMobile ? "100px 16px 40px" : "120px 24px 60px", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 20px", fontSize: 13, fontWeight: 600, color: "#8b5cf6", background: "rgba(139,92,246,0.1)", border: "1px solid rgba(139,92,246,0.2)", borderRadius: 999, marginBottom: 28, letterSpacing: "0.1em" }}>
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#8b5cf6", boxShadow: "0 0 10px #8b5cf6" }} />
           COURSE SYSTEM
         </div>
-        <h1 style={{ fontSize: 56, fontWeight: 800, lineHeight: 1.15, marginBottom: 20, color: "#fff" }}>课程体系</h1>
+        <h1 style={{ fontSize: isMobile ? 32 : 56, fontWeight: 800, lineHeight: 1.15, marginBottom: 20, color: "#fff" }}>课程体系</h1>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", maxWidth: 600, margin: "0 auto", lineHeight: 1.8 }}>
           从前端基础到 AI 全栈，再到 AI 漫剧创作与平台开发，<br />系统化培养面向未来的核心竞争力。
         </p>
@@ -231,7 +231,7 @@ export default function CoursePage({ onShowQR }) {
           <span style={{ background: "linear-gradient(135deg, #00f5ff, #8b5cf6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>学习路径</span>
         </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16, position: "relative", alignItems: "stretch" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(5, 1fr)", gap: isMobile ? 12 : 16, position: "relative", alignItems: "stretch" }}>
           {/* 连接线 */}
           <div style={{ position: "absolute", top: 50, left: "10%", right: "10%", height: 2, background: "linear-gradient(90deg, #00f5ff, #3b82f6, #8b5cf6, #ec4899, #00ff88)", opacity: 0.4, zIndex: 0 }} />
 
@@ -316,7 +316,7 @@ export default function CoursePage({ onShowQR }) {
           完成课程体系学习后，你将具备以下岗位的核心竞争力
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24, alignItems: "stretch" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: isMobile ? 16 : 24, alignItems: "stretch" }}>
           {careerPaths.map((career, i) => (
             <GlassCard
               key={i}
@@ -365,7 +365,7 @@ export default function CoursePage({ onShowQR }) {
         <h2 style={{ fontSize: 28, fontWeight: 700, color: "#fff", textAlign: "center", marginBottom: 48 }}>
           <span style={{ background: "linear-gradient(135deg, #ec4899, #8b5cf6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>课程特色</span>
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: isMobile ? 12 : 20 }}>
           {features.map((f, i) => (
             <GlassCard key={i} hoverable glowColor={["cyan", "purple", "green", "blue"][i]} style={{ textAlign: "center", padding: "32px 20px" }}>
               <div style={{ fontSize: 40, marginBottom: 16 }}>{f.icon}</div>

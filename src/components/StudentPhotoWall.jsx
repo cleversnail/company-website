@@ -32,12 +32,12 @@ const sizeConfig = {
 };
 
 // ==================== 单张照片卡片 ====================
-function PhotoCard({ student, onShowSalary, onShowDetail }) {
+function PhotoCard({ student, onShowSalary, onShowDetail, isMobile }) {
   const [isHovered, setIsHovered] = useState(false);
   const initials = (student.name || "?").slice(0, 1);
   const gradient = trackGradients[student.track] || trackGradients["AI全栈"];
-  const size = sizeConfig[student.photoSize] || sizeConfig.medium;
-  const rotation = student.rotation || 0;
+  const size = isMobile ? { width: "100%", height: "auto", photoHeight: 140 } : (sizeConfig[student.photoSize] || sizeConfig.medium);
+  const rotation = isMobile ? 0 : (student.rotation || 0);
   const zIndex = student.zIndex || 1;
 
   const handleShowSalary = useCallback((e) => {
@@ -262,7 +262,7 @@ function MasonryLayout({ children, columns = 4, gap = 24 }) {
 }
 
 // ==================== 主组件 ====================
-export default function StudentPhotoWall({ students, onShowSalary, columns = 4 }) {
+export default function StudentPhotoWall({ students, onShowSalary, columns = 4, isMobile }) {
   const [showDetail, setShowDetail] = useState(null);
 
   // 预处理：为每个学生分配随机属性

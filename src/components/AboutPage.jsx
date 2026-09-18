@@ -3,16 +3,16 @@ import GlassCard from "./GlassCard";
 import teacherQR from "../assets/images/teacher.png";
 import config from "../config/siteConfig.json";
 
-export default function AboutPage({ onShowQR }) {
+export default function AboutPage({ onShowQR, isMobile }) {
   return (
     <div style={{ position: "relative", zIndex: 10 }}>
       {/* ① Hero */}
-      <section style={{ maxWidth: 1280, margin: "0 auto", padding: "120px 24px 60px", textAlign: "center" }}>
+      <section style={{ maxWidth: 1280, margin: "0 auto", padding: isMobile ? "100px 16px 40px" : "120px 24px 60px", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 20px", fontSize: 13, fontWeight: 600, color: "#00f5ff", background: "rgba(0,245,255,0.1)", border: "1px solid rgba(0,245,255,0.2)", borderRadius: 999, marginBottom: 28, letterSpacing: "0.1em" }}>
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#00f5ff", boxShadow: "0 0 10px #00f5ff" }} />
           ABOUT US
         </div>
-        <h1 style={{ fontSize: 56, fontWeight: 800, lineHeight: 1.15, marginBottom: 20, color: "#fff" }}>关于我们</h1>
+        <h1 style={{ fontSize: isMobile ? 32 : 56, fontWeight: 800, lineHeight: 1.15, marginBottom: 20, color: "#fff" }}>关于我们</h1>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", maxWidth: 560, margin: "0 auto", lineHeight: 1.8 }}>
           用技术驱动教育，用服务创造价值
         </p>
@@ -20,7 +20,7 @@ export default function AboutPage({ onShowQR }) {
 
       {/* ② 公司简介 */}
       <section style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px 80px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 40, alignItems: "start" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.2fr 0.8fr", gap: isMobile ? 20 : 40, alignItems: "start" }}>
           {/* 左侧：公司介绍 */}
           <GlassCard hoverable={false} style={{ padding: "36px 32px" }}>
             <div style={{ fontSize: 14, fontWeight: 700, color: "#00f5ff", marginBottom: 20, letterSpacing: "0.05em" }}>公司简介</div>
@@ -38,7 +38,7 @@ export default function AboutPage({ onShowQR }) {
           </GlassCard>
 
           {/* 右侧：公司数据 */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "1fr 1fr", gap: isMobile ? 10 : 16 }}>
             {[
               { ...config.stats.serviceYears, color: "#00f5ff" },
               { ...config.stats.students, label: "服务学员", color: "#8b5cf6" },
@@ -59,7 +59,7 @@ export default function AboutPage({ onShowQR }) {
         <h2 style={{ fontSize: 28, fontWeight: 700, color: "#fff", textAlign: "center", marginBottom: 40 }}>
           <span style={{ background: "linear-gradient(135deg, #00f5ff, #8b5cf6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>使命与愿景</span>
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? 16 : 24 }}>
           {[
             { icon: "🎯", title: "使命", desc: "让每个人都能掌握 AI 技术，让每家企业都能享受数字化红利", color: "#00f5ff" },
             { icon: "🔭", title: "愿景", desc: "成为国内领先的 AI 技术教育与企业服务平台", color: "#8b5cf6" },
@@ -79,7 +79,7 @@ export default function AboutPage({ onShowQR }) {
         <h2 style={{ fontSize: 28, fontWeight: 700, color: "#fff", textAlign: "center", marginBottom: 40 }}>
           <span style={{ background: "linear-gradient(135deg, #00ff88, #00f5ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>业务版图</span>
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? 16 : 24 }}>
           {[
             {
               icon: "🎓", title: "AI 教育", color: "#00f5ff",
@@ -116,7 +116,7 @@ export default function AboutPage({ onShowQR }) {
           <span style={{ background: "linear-gradient(135deg, #ec4899, #8b5cf6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>联系我们</span>
         </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 16 : 24, marginBottom: 24 }}>
           {/* 左侧：联系信息 */}
           <GlassCard hoverable={false} style={{ padding: "32px 28px" }}>
             <div style={{ fontSize: 16, fontWeight: 700, color: "#fff", marginBottom: 24 }}>联系方式</div>

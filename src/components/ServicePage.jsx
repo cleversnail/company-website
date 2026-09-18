@@ -128,18 +128,18 @@ const processSteps = [
   { num: "05", title: "持续运维", desc: "长期技术支持与运维保障，持续优化迭代" },
 ];
 
-export default function ServicePage({ onShowQR, onNavigate }) {
+export default function ServicePage({ onShowQR, onNavigate, isMobile }) {
   const [activeService, setActiveService] = useState(services[0]);
 
   return (
     <div style={{ position: "relative", zIndex: 10 }}>
       {/* ① Hero */}
-      <section style={{ maxWidth: 1280, margin: "0 auto", padding: "120px 24px 60px", textAlign: "center" }}>
+      <section style={{ maxWidth: 1280, margin: "0 auto", padding: isMobile ? "100px 16px 40px" : "120px 24px 60px", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 20px", fontSize: 13, fontWeight: 600, color: "#8b5cf6", background: "rgba(139,92,246,0.1)", border: "1px solid rgba(139,92,246,0.2)", borderRadius: 999, marginBottom: 28, letterSpacing: "0.1em" }}>
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#8b5cf6", boxShadow: "0 0 10px #8b5cf6" }} />
           ENTERPRISE SERVICES
         </div>
-        <h1 style={{ fontSize: 56, fontWeight: 800, lineHeight: 1.15, marginBottom: 20, color: "#fff" }}>企业服务</h1>
+        <h1 style={{ fontSize: isMobile ? 32 : 56, fontWeight: 800, lineHeight: 1.15, marginBottom: 20, color: "#fff" }}>企业服务</h1>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", maxWidth: 600, margin: "0 auto", lineHeight: 1.8 }}>
           为您的企业提供全方位技术解决方案，<br />助力数字化转型与业务增长
         </p>
@@ -147,7 +147,7 @@ export default function ServicePage({ onShowQR, onNavigate }) {
 
       {/* ② 服务总览 */}
       <section style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px 60px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? 12 : 20 }}>
           {services.map((s) => (
             <GlassCard
               key={s.id}
@@ -189,7 +189,7 @@ export default function ServicePage({ onShowQR, onNavigate }) {
           {/* 描述 */}
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.7)", lineHeight: 1.8, marginBottom: 32 }}>{activeService.description}</p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 24 : 40 }}>
             {/* 左：能力清单 */}
             <div>
               <div style={{ fontSize: 14, fontWeight: 700, color: activeService.color, marginBottom: 16, letterSpacing: "0.05em" }}>核心能力</div>
@@ -228,7 +228,7 @@ export default function ServicePage({ onShowQR, onNavigate }) {
           <span style={{ background: "linear-gradient(135deg, #00ff88, #00f5ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>合作流程</span>
         </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16, position: "relative" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(5, 1fr)", gap: isMobile ? 12 : 16, position: "relative" }}>
           {/* 连接线 */}
           <div style={{ position: "absolute", top: 36, left: "10%", right: "10%", height: 2, background: "linear-gradient(90deg, #00f5ff, #8b5cf6, #00ff88, #ec4899, #f59e0b)", opacity: 0.3, zIndex: 0 }} />
 

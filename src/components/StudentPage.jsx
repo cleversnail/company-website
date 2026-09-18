@@ -33,7 +33,7 @@ export function SalaryModal({ student, onClose }) {
 const PAGE_SIZE = 8;
 const MAX_LOADS = 2;
 
-export default function StudentPage({ onShowSalary, onShowQR }) {
+export default function StudentPage({ onShowSalary, onShowQR, isMobile }) {
   const [activeFilter, setActiveFilter] = useState("全部");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [loadCount, setLoadCount] = useState(0);
@@ -76,18 +76,18 @@ export default function StudentPage({ onShowSalary, onShowQR }) {
   return (
     <div style={{ position: "relative", zIndex: 10 }}>
       {/* ① Hero */}
-      <section style={{ maxWidth: 1280, margin: "0 auto", padding: "120px 24px 60px", textAlign: "center" }}>
+      <section style={{ maxWidth: 1280, margin: "0 auto", padding: isMobile ? "100px 16px 40px" : "120px 24px 60px", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 20px", fontSize: 13, fontWeight: 600, color: "#00ff88", background: "rgba(0,255,136,0.1)", border: "1px solid rgba(0,255,136,0.2)", borderRadius: 999, marginBottom: 28, letterSpacing: "0.1em" }}>
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#00ff88", boxShadow: "0 0 10px #00ff88" }} />
           STUDENT SUCCESS
         </div>
-        <h1 style={{ fontSize: 56, fontWeight: 800, lineHeight: 1.15, marginBottom: 20, color: "#fff" }}>学员成果</h1>
+        <h1 style={{ fontSize: isMobile ? 32 : 56, fontWeight: 800, lineHeight: 1.15, marginBottom: 20, color: "#fff" }}>学员成果</h1>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", maxWidth: 560, margin: "0 auto", lineHeight: 1.8 }}>真实数据，见证每一位学员的成长与蜕变</p>
       </section>
 
       {/* ② 数据统计条 */}
       <section style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px 60px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: isMobile ? 12 : 20 }}>
           {stats.map((s) => (
             <GlassCard key={s.label} hoverable glowColor={s.color === "#00f5ff" ? "cyan" : s.color === "#8b5cf6" ? "purple" : "green"} style={{ textAlign: "center", padding: "28px 16px" }}>
               <div style={{ fontSize: 36, fontWeight: 800, color: s.color, lineHeight: 1.1, marginBottom: 6, fontFamily: "var(--font-mono)" }}>{s.num}</div>
@@ -110,7 +110,7 @@ export default function StudentPage({ onShowSalary, onShowQR }) {
 
       {/* ④ 学员照片墙 */}
       <section style={{ maxWidth: 1280, margin: "0 auto", padding: "20px 24px 40px" }}>
-        <StudentPhotoWall students={visibleStudents} onShowSalary={onShowSalary} columns={4} />
+        <StudentPhotoWall students={visibleStudents} onShowSalary={onShowSalary} columns={isMobile ? 2 : 4} isMobile={isMobile} />
         {visibleStudents.length === 0 && (
           <div style={{ textAlign: "center", padding: "60px 0", color: "rgba(255,255,255,0.4)", fontSize: 15 }}>暂无该方向学员数据</div>
         )}
