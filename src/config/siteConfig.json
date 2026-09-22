@@ -87,6 +87,21 @@
     },
     {
       "id": "stu_004",
+      "name": "郑小君",
+      "avatar": "avatars/stu_ppt_044.png",
+      "school": "江财",
+      "grade": "2024级",
+      "company": "万界科技",
+      "salary": "**",
+      "track": "AI全栈实习",
+      "status": "远程实习",
+      "tags": [
+        "AI全栈实习",
+        "远程实习中"
+      ]
+    },
+    {
+      "id": "stu_005",
       "name": "王成",
       "avatar": "avatars/stu_ppt_035.jpg",
       "school": "江财",
@@ -101,7 +116,7 @@
       ]
     },
     {
-      "id": "stu_005",
+      "id": "stu_006",
       "name": "周圣",
       "avatar": "",
       "school": "江财",
@@ -116,7 +131,7 @@
       ]
     },
     {
-      "id": "stu_006",
+      "id": "stu_007",
       "name": "刘洋",
       "avatar": "",
       "school": "江财",
@@ -131,7 +146,7 @@
       ]
     },
     {
-      "id": "stu_007",
+      "id": "stu_008",
       "name": "管芷潼",
       "avatar": "avatars/stu_ppt_033.jpg",
       "school": "江财",
@@ -146,7 +161,7 @@
       ]
     },
     {
-      "id": "stu_008",
+      "id": "stu_009",
       "name": "邹嘉炜",
       "avatar": "avatars/stu_ppt_034.jpg",
       "school": "江财",
@@ -161,7 +176,7 @@
       ]
     },
     {
-      "id": "stu_009",
+      "id": "stu_010",
       "name": "辛典典",
       "avatar": "avatars/stu_ppt_030.jpg",
       "school": "江财",
@@ -281,7 +296,7 @@
       ]
     },
     {
-      "id": "stu_010",
+      "id": "stu_011",
       "name": "刘康宇",
       "avatar": "avatars/stu_ppt_029.jpg",
       "school": "东理",
@@ -296,7 +311,7 @@
       ]
     },
     {
-      "id": "stu_011",
+      "id": "stu_018",
       "name": "肖宏涛",
       "avatar": "avatars/stu_ppt_032.jpg",
       "school": "东理",
