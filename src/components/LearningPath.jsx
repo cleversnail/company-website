@@ -59,37 +59,12 @@ export default function LearningPath({ isMobile }) {
       </div>
 
       {/* 时间线 */}
-      <div style={{ position: "relative", maxWidth: 800, margin: "0 auto" }}>
-        {/* 左侧竖线 */}
-        {!isMobile && (
-          <div
-            style={{
-              position: "absolute",
-              left: 28,
-              top: 24,
-              bottom: 24,
-              width: 2,
-              background: "linear-gradient(180deg, #00f5ff, #3b82f6, #8b5cf6, #00ff88)",
-              opacity: 0.3,
-              zIndex: 0,
-            }}
-          />
-        )}
-
-        {/* 各阶段 */}
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
         {timeline.map((item, i) => (
-          <div
-            key={i}
-            style={{
-              display: "flex",
-              gap: isMobile ? 16 : 28,
-              marginBottom: i < timeline.length - 1 ? (isMobile ? 20 : 28) : 0,
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            {/* 左侧节点 */}
+          <div key={i} style={{ display: "flex", gap: isMobile ? 16 : 28 }}>
+            {/* 左侧：节点 + 短连线 */}
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0, width: isMobile ? 40 : 58 }}>
+              {/* 节点 */}
               <div
                 style={{
                   width: isMobile ? 36 : 44,
@@ -105,40 +80,57 @@ export default function LearningPath({ isMobile }) {
                   color: item.color,
                   boxShadow: `0 0 16px ${item.color}30`,
                   flexShrink: 0,
+                  zIndex: 1,
                 }}
               >
                 {item.year}
               </div>
+
+              {/* 短连线（非最后一个节点才需要） */}
+              {i < timeline.length - 1 && (
+                <div
+                  style={{
+                    flex: 1,
+                    width: 2,
+                    minHeight: isMobile ? 16 : 24,
+                    background: `linear-gradient(180deg, ${item.color}40, ${timeline[i + 1].color}40)`,
+                    marginTop: 4,
+                    marginBottom: 4,
+                    borderRadius: 1,
+                  }}
+                />
+              )}
             </div>
 
             {/* 右侧内容卡片 */}
-            <GlassCard
-              hoverable
-              glowColor={i === 0 ? "cyan" : i === 1 ? "blue" : i === 2 ? "purple" : "green"}
-              style={{
-                flex: 1,
-                padding: isMobile ? "16px" : "20px 24px",
-                borderLeft: `3px solid ${item.color}40`,
-              }}
-            >
-              <div style={{ fontSize: isMobile ? 16 : 18, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
-                {item.title}
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                {item.lines.map((line, li) => (
-                  <div key={li} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                    <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.color, marginTop: 8, flexShrink: 0, boxShadow: `0 0 6px ${item.color}60` }} />
-                    <span>{line}</span>
-                  </div>
-                ))}
-              </div>
-            </GlassCard>
+            <div style={{ flex: 1, marginBottom: isMobile ? 16 : 24 }}>
+              <GlassCard
+                hoverable
+                glowColor={i === 0 ? "cyan" : i === 1 ? "blue" : i === 2 ? "purple" : "green"}
+                style={{
+                  padding: isMobile ? "16px" : "20px 24px",
+                  borderLeft: `3px solid ${item.color}40`,
+                }}
+              >
+                <div style={{ fontSize: isMobile ? 16 : 18, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
+                  {item.title}
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  {item.lines.map((line, li) => (
+                    <div key={li} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
+                      <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.color, marginTop: 8, flexShrink: 0, boxShadow: `0 0 6px ${item.color}60` }} />
+                      <span>{line}</span>
+                    </div>
+                  ))}
+                </div>
+              </GlassCard>
+            </div>
           </div>
         ))}
       </div>
 
       {/* 考研规划（低年级同学） */}
-      <div style={{ maxWidth: 800, margin: "32px auto 0" }}>
+      <div style={{ maxWidth: 800, margin: "8px auto 0" }}>
         <GlassCard
           hoverable={false}
           style={{
@@ -167,7 +159,6 @@ export default function LearningPath({ isMobile }) {
             ))}
           </div>
 
-          {/* 承诺语 */}
           <div
             style={{
               padding: "12px 16px",
