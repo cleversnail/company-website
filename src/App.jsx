@@ -36,29 +36,103 @@ function HomePage({ onNavigate, onShowQR, isMobile }) {
   return (
     <>
       {/* Hero */}
-      <header style={{ position: "relative", zIndex: 10, maxWidth: 1280, margin: "0 auto", padding: isMobile ? "120px 20px 60px" : "160px 24px 100px", textAlign: "center" }}>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: isMobile ? "6px 14px" : "8px 20px", fontSize: isMobile ? 11 : 13, fontWeight: 600, color: "#00f5ff", background: "rgba(0,245,255,0.1)", border: "1px solid rgba(0,245,255,0.2)", borderRadius: 999, marginBottom: isMobile ? 20 : 32, letterSpacing: "0.1em", textTransform: "uppercase" }}>
-          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#00f5ff", boxShadow: "0 0 10px #00f5ff" }} />
-          AI Coding Training
+      <header style={{ position: "relative", zIndex: 10, maxWidth: 1280, margin: "0 auto", padding: isMobile ? "120px 20px 60px" : "160px 24px 100px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 24 : 48, flexDirection: isMobile ? "column-reverse" : "row" }}>
+          {/* 左侧：文案 */}
+          <div style={{ flex: 1, textAlign: isMobile ? "center" : "left" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: isMobile ? "6px 14px" : "8px 20px", fontSize: isMobile ? 11 : 13, fontWeight: 600, color: "#00f5ff", background: "rgba(0,245,255,0.1)", border: "1px solid rgba(0,245,255,0.2)", borderRadius: 999, marginBottom: isMobile ? 20 : 28, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#00f5ff", boxShadow: "0 0 10px #00f5ff" }} />
+              AI Coding Training
+            </div>
+            <h1 style={{ fontSize: isMobile ? 36 : 56, fontWeight: 800, lineHeight: 1.15, marginBottom: isMobile ? 16 : 20, letterSpacing: "-0.02em" }}>
+              <span style={{ color: "#ffffff" }}>构建面向未来的</span><br />
+              <span style={{ background: "linear-gradient(135deg, #00f5ff 0%, #8b5cf6 50%, #00ff88 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", backgroundSize: "200% 200%", animation: "gradient-shift 4s ease infinite" }}>AI编程能力</span>
+            </h1>
+            <p style={{ fontSize: isMobile ? 15 : 17, color: "rgba(255,255,255,0.6)", maxWidth: 480, margin: isMobile ? "0 auto 32px" : "0 0 36px", lineHeight: 1.8 }}>
+              从基础到工程化落地，系统性培养 AI 全栈开发能力。<br />学员涵盖国内各大高校，入职头部互联网企业。
+            </p>
+            <div style={{ display: "flex", gap: 12, justifyContent: isMobile ? "center" : "flex-start", flexWrap: "wrap", flexDirection: isMobile ? "column" : "row", alignItems: "center" }}>
+              <button onClick={() => onShowQR("trial")} style={{ padding: isMobile ? "14px 0" : "14px 32px", fontSize: 15, fontWeight: 600, color: "#050510", background: "linear-gradient(135deg, #00f5ff, #00d4ff)", borderRadius: 12, border: "none", cursor: "pointer", transition: "all 0.3s ease", boxShadow: "0 0 40px rgba(0,245,255,0.4), 0 8px 32px rgba(0,0,0,0.3)", width: isMobile ? "85%" : "auto" }}>试听课程</button>
+              <button onClick={() => onNavigate("courses")} style={{ padding: isMobile ? "14px 0" : "14px 32px", fontSize: 15, fontWeight: 500, color: "#ffffff", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, cursor: "pointer", transition: "all 0.3s ease", width: isMobile ? "85%" : "auto" }}>查看课程体系</button>
+            </div>
+          </div>
+
+          {/* 右侧：课堂照片 */}
+          {!isMobile && (
+            <div style={{ flexShrink: 0, width: 420, position: "relative" }}>
+              {/* 发光边框容器 */}
+              <div
+                style={{
+                  borderRadius: 20,
+                  padding: 2,
+                  background: "linear-gradient(135deg, rgba(0,245,255,0.4), rgba(139,92,246,0.4), rgba(0,255,136,0.3))",
+                  boxShadow: "0 0 40px rgba(0,245,255,0.15), 0 20px 60px rgba(0,0,0,0.4)",
+                }}
+              >
+                {/* 照片容器 */}
+                <div
+                  style={{
+                    borderRadius: 18,
+                    overflow: "hidden",
+                    position: "relative",
+                    aspectRatio: "4/3",
+                  }}
+                >
+                  {/* 照片 */}
+                  <img
+                    src="/images/class.jpg"
+                    alt="蜗牛AI培训课堂"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                      filter: "brightness(0.7) contrast(1.05)",
+                    }}
+                  />
+                  {/* 暗色遮罩 */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "linear-gradient(135deg, rgba(5,5,16,0.3), rgba(5,5,16,0.5))",
+                    }}
+                  />
+                  {/* 底部渐变融合 */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: "40%",
+                      background: "linear-gradient(transparent, rgba(5,5,16,0.6))",
+                    }}
+                  />
+                  {/* 角落装饰 */}
+                  <div style={{ position: "absolute", top: 12, left: 12, width: 20, height: 20, borderTop: "2px solid rgba(0,245,255,0.6)", borderLeft: "2px solid rgba(0,245,255,0.6)", borderRadius: "4px 0 0 0" }} />
+                  <div style={{ position: "absolute", top: 12, right: 12, width: 20, height: 20, borderTop: "2px solid rgba(0,245,255,0.6)", borderRight: "2px solid rgba(0,245,255,0.6)", borderRadius: "0 4px 0 0" }} />
+                  <div style={{ position: "absolute", bottom: 12, left: 12, width: 20, height: 20, borderBottom: "2px solid rgba(139,92,246,0.6)", borderLeft: "2px solid rgba(139,92,246,0.6)", borderRadius: "0 0 0 4px" }} />
+                  <div style={{ position: "absolute", bottom: 12, right: 12, width: 20, height: 20, borderBottom: "2px solid rgba(139,92,246,0.6)", borderRight: "2px solid rgba(139,92,246,0.6)", borderRadius: "0 0 4px 0" }} />
+                  {/* 底部文字标签 */}
+                  <div style={{ position: "absolute", bottom: 16, left: 16, display: "flex", gap: 8 }}>
+                    <span style={{ padding: "4px 12px", fontSize: 11, fontWeight: 600, borderRadius: 6, background: "rgba(0,0,0,0.5)", color: "#00f5ff", border: "1px solid rgba(0,245,255,0.3)", backdropFilter: "blur(8px)" }}>线下授课</span>
+                    <span style={{ padding: "4px 12px", fontSize: 11, fontWeight: 600, borderRadius: 6, background: "rgba(0,0,0,0.5)", color: "#00ff88", border: "1px solid rgba(0,255,136,0.3)", backdropFilter: "blur(8px)" }}>实战项目</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-        <h1 style={{ fontSize: isMobile ? 36 : 64, fontWeight: 800, lineHeight: 1.15, marginBottom: isMobile ? 16 : 24, letterSpacing: "-0.02em" }}>
-          <span style={{ color: "#ffffff" }}>构建面向未来的</span><br />
-          <span style={{ background: "linear-gradient(135deg, #00f5ff 0%, #8b5cf6 50%, #00ff88 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", backgroundSize: "200% 200%", animation: "gradient-shift 4s ease infinite" }}>AI编程能力</span>
-        </h1>
-        <p style={{ fontSize: isMobile ? 15 : 18, color: "rgba(255,255,255,0.6)", maxWidth: 560, margin: `0 auto ${isMobile ? 32 : 48}px`, lineHeight: 1.8 }}>
-          从基础到工程化落地，系统性培养 AI 全栈开发能力。<br />学员涵盖国内各大高校，入职头部互联网企业。
-        </p>
-        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", flexDirection: isMobile ? "column" : "row", alignItems: "center" }}>
-          <button onClick={() => onShowQR("trial")} style={{ padding: isMobile ? "14px 0" : "16px 36px", fontSize: 16, fontWeight: 600, color: "#050510", background: "linear-gradient(135deg, #00f5ff, #00d4ff)", borderRadius: 12, border: "none", cursor: "pointer", transition: "all 0.3s ease", boxShadow: "0 0 40px rgba(0,245,255,0.4), 0 8px 32px rgba(0,0,0,0.3)", width: isMobile ? "85%" : "auto" }}>试听课程</button>
-          <button onClick={() => onNavigate("courses")} style={{ padding: isMobile ? "14px 0" : "16px 36px", fontSize: 16, fontWeight: 500, color: "#ffffff", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, cursor: "pointer", transition: "all 0.3s ease", width: isMobile ? "85%" : "auto" }}>查看课程体系</button>
-        </div>
+
+        {/* 浮动装饰（桌面端） */}
         {!isMobile && (
           <>
-            <div style={{ position: "absolute", top: "20%", left: "5%", width: 120, height: 120, borderRadius: 20, background: "linear-gradient(135deg, rgba(0,245,255,0.1), rgba(139,92,246,0.1))", border: "1px solid rgba(0,245,255,0.2)", backdropFilter: "blur(10px)", animation: "float 6s ease-in-out infinite", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+            <div style={{ position: "absolute", top: "10%", left: "0%", width: 80, height: 80, borderRadius: 16, background: "linear-gradient(135deg, rgba(0,245,255,0.08), rgba(139,92,246,0.08))", border: "1px solid rgba(0,245,255,0.15)", backdropFilter: "blur(10px)", animation: "float 6s ease-in-out infinite", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
             </div>
-            <div style={{ position: "absolute", top: "30%", right: "8%", width: 100, height: 100, borderRadius: "50%", background: "linear-gradient(135deg, rgba(139,92,246,0.15), rgba(236,72,153,0.15))", border: "1px solid rgba(139,92,246,0.2)", backdropFilter: "blur(10px)", animation: "float 8s ease-in-out infinite reverse", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
+            <div style={{ position: "absolute", bottom: "5%", right: "0%", width: 60, height: 60, borderRadius: "50%", background: "linear-gradient(135deg, rgba(139,92,246,0.1), rgba(236,72,153,0.1))", border: "1px solid rgba(139,92,246,0.15)", backdropFilter: "blur(10px)", animation: "float 8s ease-in-out infinite reverse", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
             </div>
           </>
         )}
@@ -132,13 +206,11 @@ export default function App() {
       {/* Navigation */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? "rgba(5,5,16,0.95)" : "rgba(5,5,16,0.6)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent", transition: "all 0.3s ease" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 20px", height: isMobile ? 60 : 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          {/* Logo */}
           <div style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }} onClick={() => navigateTo("home")}>
             <img src={logoImg} alt={config.company.shortName} style={{ height: isMobile ? 32 : 40, width: "auto", display: "block", objectFit: "contain" }} />
             <span style={{ fontSize: isMobile ? 17 : 20, fontWeight: 700, color: "#ffffff", letterSpacing: "0.05em" }}>{config.company.shortName}</span>
           </div>
 
-          {/* 桌面端导航 */}
           {!isMobile && (
             <div style={{ display: "flex", alignItems: "center", gap: 36, fontSize: 15, fontWeight: 500 }}>
               {navItems.map((item) => (
@@ -155,12 +227,8 @@ export default function App() {
             </div>
           )}
 
-          {/* 手机端汉堡按钮 */}
           {isMobile && (
-            <button
-              onClick={() => setDrawerOpen(true)}
-              style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 5, padding: 0 }}
-            >
+            <button onClick={() => setDrawerOpen(true)} style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 5, padding: 0 }}>
               <span style={{ width: 20, height: 2, background: "#fff", borderRadius: 1, display: "block" }} />
               <span style={{ width: 20, height: 2, background: "#fff", borderRadius: 1, display: "block" }} />
               <span style={{ width: 14, height: 2, background: "#00f5ff", borderRadius: 1, display: "block" }} />
@@ -169,30 +237,17 @@ export default function App() {
         </div>
       </nav>
 
-      {/* 手机端抽屉菜单 */}
-      {isMobile && (
-        <DrawerMenu
-          open={drawerOpen}
-          onClose={() => setDrawerOpen(false)}
-          navItems={navItems}
-          currentPage={currentPage}
-          onNavigate={navigateTo}
-          onShowQR={setQrModalVariant}
-        />
-      )}
+      {isMobile && <DrawerMenu open={drawerOpen} onClose={() => setDrawerOpen(false)} navItems={navItems} currentPage={currentPage} onNavigate={navigateTo} onShowQR={setQrModalVariant} />}
 
-      {/* Page Content */}
       {currentPage === "home" && <HomePage onNavigate={navigateTo} onShowQR={setQrModalVariant} isMobile={isMobile} />}
       {currentPage === "courses" && <CoursePage onShowQR={setQrModalVariant} isMobile={isMobile} />}
       {currentPage === "students" && <StudentPage onShowSalary={setSalaryModal} onShowQR={setQrModalVariant} isMobile={isMobile} />}
       {currentPage === "services" && <ServicePage onShowQR={setQrModalVariant} onNavigate={navigateTo} isMobile={isMobile} />}
       {currentPage === "about" && <AboutPage onShowQR={setQrModalVariant} isMobile={isMobile} />}
 
-      {/* Modals */}
       {salaryModal && <SalaryModal student={salaryModal} onClose={() => setSalaryModal(null)} />}
       {qrModalVariant && <TeacherQRModal variant={qrModalVariant} onClose={() => setQrModalVariant(null)} />}
 
-      {/* Footer */}
       <footer style={{ position: "relative", zIndex: 10, textAlign: "center", padding: isMobile ? "24px 16px" : "40px 24px", fontSize: 13, color: "rgba(255,255,255,0.4)", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
         <div style={{ marginBottom: 8 }}>{config.company.icp}</div>
         <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>{config.company.footerTags.join(" · ")}</div>
