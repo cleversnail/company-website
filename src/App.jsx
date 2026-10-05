@@ -8,6 +8,7 @@ import TeacherQRModal from "./components/TeacherQRModal";
 import ServicePage from "./components/ServicePage";
 import AboutPage from "./components/AboutPage";
 import DrawerMenu from "./components/DrawerMenu";
+import LearningPath from "./components/LearningPath";
 import useResponsive from "./hooks/useResponsive";
 import "./components/student-ticker/StudentTicker.css";
 import logoImg from "./assets/images/logo-ai.png";
@@ -62,6 +63,9 @@ function HomePage({ onNavigate, onShowQR, isMobile }) {
           </>
         )}
       </header>
+
+      {/* 学习路径规划 */}
+      <LearningPath isMobile={isMobile} />
 
       {/* 学员滚动 */}
       <section style={{ position: "relative", zIndex: 10 }}>
