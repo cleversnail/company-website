@@ -12,6 +12,7 @@ import LearningPath from "./components/LearningPath";
 import useResponsive from "./hooks/useResponsive";
 import "./components/student-ticker/StudentTicker.css";
 import logoImg from "./assets/images/logo-ai.png";
+import classImg from "./assets/images/class.jpg";
 import config from "./config/siteConfig.json";
 
 const TechIcon = ({ type }) => {
@@ -57,68 +58,80 @@ function HomePage({ onNavigate, onShowQR, isMobile }) {
             </div>
           </div>
 
-          {/* 右侧：课堂照片 */}
+          {/* 右侧：课堂照片（方案二：终端窗口风格） */}
           {!isMobile && (
-            <div style={{ flexShrink: 0, width: 420, position: "relative" }}>
-              {/* 发光边框容器 */}
+            <div style={{ flexShrink: 0, width: 440 }}>
+              {/* 窗口容器 */}
               <div
                 style={{
-                  borderRadius: 20,
-                  padding: 2,
-                  background: "linear-gradient(135deg, rgba(0,245,255,0.4), rgba(139,92,246,0.4), rgba(0,255,136,0.3))",
-                  boxShadow: "0 0 40px rgba(0,245,255,0.15), 0 20px 60px rgba(0,0,0,0.4)",
+                  borderRadius: 16,
+                  overflow: "hidden",
+                  background: "rgba(15, 15, 40, 0.8)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  boxShadow: "0 0 50px rgba(0,245,255,0.1), 0 20px 60px rgba(0,0,0,0.4)",
                 }}
               >
-                {/* 照片容器 */}
+                {/* 窗口标题栏 */}
                 <div
                   style={{
-                    borderRadius: 18,
-                    overflow: "hidden",
-                    position: "relative",
-                    aspectRatio: "4/3",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    padding: "12px 16px",
+                    borderBottom: "1px solid rgba(255,255,255,0.06)",
+                    background: "rgba(0,0,0,0.2)",
                   }}
                 >
-                  {/* 照片 */}
+                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f57" }} />
+                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#febc2e" }} />
+                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#28c840" }} />
+                  <span style={{ marginLeft: 12, fontSize: 12, color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-mono)" }}>
+                    woniu-ai-classroom
+                  </span>
+                </div>
+
+                {/* 照片区域 */}
+                <div style={{ position: "relative", aspectRatio: "16/10" }}>
                   <img
-                    src="/images/class.jpg"
+                    src={classImg}
                     alt="蜗牛AI培训课堂"
                     style={{
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
                       display: "block",
-                      filter: "brightness(0.7) contrast(1.05)",
                     }}
                   />
-                  {/* 暗色遮罩 */}
+                  {/* 轻微暗色遮罩 */}
                   <div
                     style={{
                       position: "absolute",
                       inset: 0,
-                      background: "linear-gradient(135deg, rgba(5,5,16,0.3), rgba(5,5,16,0.5))",
+                      background: "linear-gradient(180deg, transparent 60%, rgba(15,15,40,0.5) 100%)",
                     }}
                   />
-                  {/* 底部渐变融合 */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: "40%",
-                      background: "linear-gradient(transparent, rgba(5,5,16,0.6))",
-                    }}
-                  />
-                  {/* 角落装饰 */}
-                  <div style={{ position: "absolute", top: 12, left: 12, width: 20, height: 20, borderTop: "2px solid rgba(0,245,255,0.6)", borderLeft: "2px solid rgba(0,245,255,0.6)", borderRadius: "4px 0 0 0" }} />
-                  <div style={{ position: "absolute", top: 12, right: 12, width: 20, height: 20, borderTop: "2px solid rgba(0,245,255,0.6)", borderRight: "2px solid rgba(0,245,255,0.6)", borderRadius: "0 4px 0 0" }} />
-                  <div style={{ position: "absolute", bottom: 12, left: 12, width: 20, height: 20, borderBottom: "2px solid rgba(139,92,246,0.6)", borderLeft: "2px solid rgba(139,92,246,0.6)", borderRadius: "0 0 0 4px" }} />
-                  <div style={{ position: "absolute", bottom: 12, right: 12, width: 20, height: 20, borderBottom: "2px solid rgba(139,92,246,0.6)", borderRight: "2px solid rgba(139,92,246,0.6)", borderRadius: "0 0 4px 0" }} />
-                  {/* 底部文字标签 */}
-                  <div style={{ position: "absolute", bottom: 16, left: 16, display: "flex", gap: 8 }}>
-                    <span style={{ padding: "4px 12px", fontSize: 11, fontWeight: 600, borderRadius: 6, background: "rgba(0,0,0,0.5)", color: "#00f5ff", border: "1px solid rgba(0,245,255,0.3)", backdropFilter: "blur(8px)" }}>线下授课</span>
-                    <span style={{ padding: "4px 12px", fontSize: 11, fontWeight: 600, borderRadius: 6, background: "rgba(0,0,0,0.5)", color: "#00ff88", border: "1px solid rgba(0,255,136,0.3)", backdropFilter: "blur(8px)" }}>实战项目</span>
+                </div>
+
+                {/* 底部信息栏 */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "10px 16px",
+                    borderTop: "1px solid rgba(255,255,255,0.06)",
+                    background: "rgba(0,0,0,0.15)",
+                  }}
+                >
+                  <div style={{ display: "flex", gap: 8 }}>
+                    <span style={{ padding: "3px 10px", fontSize: 11, fontWeight: 600, borderRadius: 6, background: "rgba(0,245,255,0.1)", color: "#00f5ff", border: "1px solid rgba(0,245,255,0.2)" }}>线下授课</span>
+                    <span style={{ padding: "3px 10px", fontSize: 11, fontWeight: 600, borderRadius: 6, background: "rgba(0,255,136,0.1)", color: "#00ff88", border: "1px solid rgba(0,255,136,0.2)" }}>实战项目</span>
                   </div>
+                  <span style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-mono)" }}>
+                    class.jpg
+                  </span>
                 </div>
               </div>
             </div>
