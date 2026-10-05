@@ -38,7 +38,7 @@ function HomePage({ onNavigate, onShowQR, isMobile }) {
     <>
       {/* Hero */}
       <header style={{ position: "relative", zIndex: 10, maxWidth: 1280, margin: "0 auto", padding: isMobile ? "120px 20px 60px" : "160px 24px 100px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 24 : 48, flexDirection: isMobile ? "column-reverse" : "row" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 20 : 32, flexDirection: isMobile ? "column-reverse" : "row" }}>
           {/* 左侧：文案 */}
           <div style={{ flex: 1, textAlign: isMobile ? "center" : "left" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: isMobile ? "6px 14px" : "8px 20px", fontSize: isMobile ? 11 : 13, fontWeight: 600, color: "#00f5ff", background: "rgba(0,245,255,0.1)", border: "1px solid rgba(0,245,255,0.2)", borderRadius: 999, marginBottom: isMobile ? 20 : 28, letterSpacing: "0.1em", textTransform: "uppercase" }}>
