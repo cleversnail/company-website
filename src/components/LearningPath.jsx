@@ -61,10 +61,10 @@ export default function LearningPath({ isMobile }) {
       {/* 时间线 */}
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         {timeline.map((item, i) => (
-          <div key={i} style={{ display: "flex", gap: isMobile ? 16 : 28 }}>
-            {/* 左侧：节点 + 短连线 */}
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0, width: isMobile ? 40 : 58 }}>
-              {/* 节点 */}
+          <React.Fragment key={i}>
+            {/* 节点行 */}
+            <div style={{ display: "flex", gap: isMobile ? 16 : 28, alignItems: "flex-start" }}>
+              {/* 左侧节点 */}
               <div
                 style={{
                   width: isMobile ? 36 : 44,
@@ -80,34 +80,17 @@ export default function LearningPath({ isMobile }) {
                   color: item.color,
                   boxShadow: `0 0 16px ${item.color}30`,
                   flexShrink: 0,
-                  zIndex: 1,
                 }}
               >
                 {item.year}
               </div>
 
-              {/* 短连线（非最后一个节点才需要） */}
-              {i < timeline.length - 1 && (
-                <div
-                  style={{
-                    flex: 1,
-                    width: 2,
-                    minHeight: isMobile ? 16 : 24,
-                    background: `linear-gradient(180deg, ${item.color}40, ${timeline[i + 1].color}40)`,
-                    marginTop: 4,
-                    marginBottom: 4,
-                    borderRadius: 1,
-                  }}
-                />
-              )}
-            </div>
-
-            {/* 右侧内容卡片 */}
-            <div style={{ flex: 1, marginBottom: isMobile ? 16 : 24 }}>
+              {/* 右侧卡片 */}
               <GlassCard
                 hoverable
                 glowColor={i === 0 ? "cyan" : i === 1 ? "blue" : i === 2 ? "purple" : "green"}
                 style={{
+                  flex: 1,
                   padding: isMobile ? "16px" : "20px 24px",
                   borderLeft: `3px solid ${item.color}40`,
                 }}
@@ -125,12 +108,32 @@ export default function LearningPath({ isMobile }) {
                 </div>
               </GlassCard>
             </div>
-          </div>
+
+            {/* 连接线行（非最后一个） */}
+            {i < timeline.length - 1 && (
+              <div style={{ display: "flex", paddingLeft: isMobile ? 16 : 20, marginBottom: isMobile ? 4 : 6, marginTop: isMobile ? 4 : 6 }}>
+                <div style={{ position: "relative", width: isMobile ? 8 : 12 }}>
+                  {/* 短虚线段 */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      width: 2,
+                      height: "100%",
+                      backgroundImage: `linear-gradient(to bottom, ${item.color}60 50%, transparent 50%)`,
+                      backgroundSize: "2px 8px",
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+          </React.Fragment>
         ))}
       </div>
 
       {/* 考研规划（低年级同学） */}
-      <div style={{ maxWidth: 800, margin: "8px auto 0" }}>
+      <div style={{ maxWidth: 800, margin: "16px auto 0" }}>
         <GlassCard
           hoverable={false}
           style={{
