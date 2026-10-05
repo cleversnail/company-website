@@ -7,6 +7,8 @@ import StudentPage, { SalaryModal } from "./components/StudentPage";
 import TeacherQRModal from "./components/TeacherQRModal";
 import ServicePage from "./components/ServicePage";
 import AboutPage from "./components/AboutPage";
+import ResumeTemplatePage from "./components/ResumeTemplatePage";
+import resumePdf from "./assets/pdf/简历模板.pdf";
 import DrawerMenu from "./components/DrawerMenu";
 import LearningPath from "./components/LearningPath";
 import useResponsive from "./hooks/useResponsive";
@@ -38,7 +40,7 @@ function HomePage({ onNavigate, onShowQR, isMobile }) {
     <>
       {/* Hero */}
       <header style={{ position: "relative", zIndex: 10, maxWidth: 1280, margin: "0 auto", padding: isMobile ? "120px 20px 60px" : "160px 24px 100px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 20 : 32, flexDirection: isMobile ? "column-reverse" : "row" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 16 : 20, flexDirection: isMobile ? "column-reverse" : "row" }}>
           {/* 左侧：文案 */}
           <div style={{ flex: 1, textAlign: isMobile ? "center" : "left" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: isMobile ? "6px 14px" : "8px 20px", fontSize: isMobile ? 11 : 13, fontWeight: 600, color: "#00f5ff", background: "rgba(0,245,255,0.1)", border: "1px solid rgba(0,245,255,0.2)", borderRadius: 999, marginBottom: isMobile ? 20 : 28, letterSpacing: "0.1em", textTransform: "uppercase" }}>
@@ -210,6 +212,7 @@ export default function App() {
     { label: "学员成果", page: "students" },
     { label: "企业服务", page: "services" },
     { label: "关于我们", page: "about" },
+    { label: "简历模板", page: "resume" },
   ];
 
   return (
@@ -256,6 +259,7 @@ export default function App() {
       {currentPage === "courses" && <CoursePage onShowQR={setQrModalVariant} isMobile={isMobile} />}
       {currentPage === "students" && <StudentPage onShowSalary={setSalaryModal} onShowQR={setQrModalVariant} isMobile={isMobile} />}
       {currentPage === "services" && <ServicePage onShowQR={setQrModalVariant} onNavigate={navigateTo} isMobile={isMobile} />}
+      {currentPage === "resume" && <ResumeTemplatePage pdfUrl={resumePdf} isMobile={isMobile} />}
       {currentPage === "about" && <AboutPage onShowQR={setQrModalVariant} isMobile={isMobile} />}
 
       {salaryModal && <SalaryModal student={salaryModal} onClose={() => setSalaryModal(null)} />}

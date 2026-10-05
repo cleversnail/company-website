@@ -60,7 +60,7 @@ export default function ResumeTemplatePage({ pdfUrl, isMobile }) {
             lineHeight: 1.8,
           }}
         >
-          为求职学员提供专业的简历模板，助力求职之路
+          为学员提供专业的简历修改，面试指导，助力求职之路
         </p>
       </section>
 
