@@ -94,7 +94,7 @@ export default function LearningPath({ isMobile }) {
                   <div
                     style={{
                       width: 2,
-                      height: isMobile ? 48 : 56,
+                      height: isMobile ? 80 : 100,
                       background: `linear-gradient(180deg, ${item.color}50, ${timeline[i + 1].color}50)`,
                       marginTop: 0,
                     }}
