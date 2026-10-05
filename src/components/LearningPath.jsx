@@ -5,36 +5,40 @@ export default function LearningPath({ isMobile }) {
   const timeline = [
     {
       year: "大一",
-      title: "夯实基础",
-      desc: "系统学习 AI 编程，掌握核心开发技能",
+      title: "夯实基础 · 积累项目",
+      lines: [
+        "有充足的时间做更多的项目",
+        "积累高质量项目经验",
+        "上架自己的商业化产品",
+      ],
       color: "#00f5ff",
     },
     {
       year: "大二",
-      title: "实战积累",
+      title: "竞赛实战 · 远程实习",
       lines: [
         "参加竞赛、积累项目经验",
         "暑期开启远程实习",
         "助力保研加权加分，复试简历更具竞争力",
       ],
-      color: "#00f5ff",
+      color: "#3b82f6",
     },
     {
       year: "大三",
-      title: "关键抉择",
-      isBranch: true,
-      branches: [
-        { label: "考研方向", desc: "全力备研，冲刺名校", color: "#8b5cf6" },
-        { label: "就业方向", desc: "All in AI Agent 开发，冲击大厂实习", color: "#00f5ff" },
+      title: "进入大厂 · 实战提升",
+      lines: [
+        "去大厂、去 AI 企业实习",
+        "提升开发能力，积累行业经验",
       ],
-      color: "#f59e0b",
+      color: "#8b5cf6",
     },
     {
       year: "大四",
-      title: "收获成果",
+      title: "All in AI · 高薪就业",
       lines: [
-        "考研上岸 → 读研期间凭技术实力在导师项目组脱颖而出",
-        "直接就业 → 拿下大厂 offer，高薪起步",
+        "All in AI Agent 开发",
+        "拿下大厂、AI 企业 offer",
+        "高薪就业",
       ],
       color: "#00ff88",
     },
@@ -50,7 +54,7 @@ export default function LearningPath({ isMobile }) {
           </span>
         </h2>
         <p style={{ fontSize: isMobile ? 14 : 16, color: "rgba(255,255,255,0.5)" }}>
-          从大一到大四，每一步都有清晰方向
+          不同年级有不同的目标和策略，每一步都有清晰方向
         </p>
       </div>
 
@@ -65,7 +69,7 @@ export default function LearningPath({ isMobile }) {
               top: 24,
               bottom: 24,
               width: 2,
-              background: "linear-gradient(180deg, #00f5ff, #8b5cf6, #00ff88)",
+              background: "linear-gradient(180deg, #00f5ff, #3b82f6, #8b5cf6, #00ff88)",
               opacity: 0.3,
               zIndex: 0,
             }}
@@ -79,7 +83,7 @@ export default function LearningPath({ isMobile }) {
             style={{
               display: "flex",
               gap: isMobile ? 16 : 28,
-              marginBottom: i < timeline.length - 1 ? (isMobile ? 24 : 32) : 0,
+              marginBottom: i < timeline.length - 1 ? (isMobile ? 20 : 28) : 0,
               position: "relative",
               zIndex: 1,
             }}
@@ -110,7 +114,7 @@ export default function LearningPath({ isMobile }) {
             {/* 右侧内容卡片 */}
             <GlassCard
               hoverable
-              glowColor={item.color === "#00f5ff" ? "cyan" : item.color === "#8b5cf6" ? "purple" : item.color === "#00ff88" ? "green" : "blue"}
+              glowColor={i === 0 ? "cyan" : i === 1 ? "blue" : i === 2 ? "purple" : "green"}
               style={{
                 flex: 1,
                 padding: isMobile ? "16px" : "20px 24px",
@@ -120,78 +124,65 @@ export default function LearningPath({ isMobile }) {
               <div style={{ fontSize: isMobile ? 16 : 18, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
                 {item.title}
               </div>
-
-              {/* 普通阶段 */}
-              {item.lines && (
-                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                  {item.lines.map((line, li) => (
-                    <div key={li} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                      <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.color, marginTop: 8, flexShrink: 0, boxShadow: `0 0 6px ${item.color}60` }} />
-                      <span>{line}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* 分支阶段（大三） */}
-              {item.isBranch && (
-                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                  {item.branches.map((b, bi) => (
-                    <div
-                      key={bi}
-                      style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: 10,
-                        padding: "10px 14px",
-                        borderRadius: 10,
-                        background: `${b.color}08`,
-                        border: `1px solid ${b.color}15`,
-                      }}
-                    >
-                      <div
-                        style={{
-                          padding: "2px 10px",
-                          borderRadius: 6,
-                          background: `${b.color}20`,
-                          color: b.color,
-                          fontSize: 12,
-                          fontWeight: 700,
-                          whiteSpace: "nowrap",
-                          flexShrink: 0,
-                        }}
-                      >
-                        {b.label}
-                      </div>
-                      <span style={{ fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                        {b.desc}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                {item.lines.map((line, li) => (
+                  <div key={li} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
+                    <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.color, marginTop: 8, flexShrink: 0, boxShadow: `0 0 6px ${item.color}60` }} />
+                    <span>{line}</span>
+                  </div>
+                ))}
+              </div>
             </GlassCard>
           </div>
         ))}
       </div>
 
-      {/* 考研保底提示 */}
-      <div style={{ maxWidth: 800, margin: "24px auto 0" }}>
+      {/* 考研规划（低年级同学） */}
+      <div style={{ maxWidth: 800, margin: "32px auto 0" }}>
         <GlassCard
           hoverable={false}
           style={{
-            padding: isMobile ? "14px 16px" : "16px 24px",
-            background: "rgba(245,158,11,0.06)",
-            border: "1px solid rgba(245,158,11,0.2)",
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
+            padding: isMobile ? "18px 16px" : "24px 28px",
+            background: "linear-gradient(135deg, rgba(139,92,246,0.06), rgba(0,245,255,0.04))",
+            border: "1px solid rgba(139,92,246,0.15)",
           }}
         >
-          <div style={{ fontSize: 20, flexShrink: 0 }}>💡</div>
-          <div style={{ fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>
-            <span style={{ color: "#f59e0b", fontWeight: 600 }}>考研失利？</span>
-            大四下学期立即就业，不错过应届生身份。我们会持续陪伴大家直到良好就业。
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+            <div style={{ fontSize: 20 }}>📚</div>
+            <div style={{ fontSize: isMobile ? 15 : 16, fontWeight: 700, color: "#8b5cf6" }}>
+              低年级同学考研规划
+            </div>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 16 }}>
+            {[
+              "大三回归备研，全力冲刺名校",
+              "大四上学期末考研上岸，读研期间凭技术实力在导师项目组中脱颖而出",
+              "万一考研失利，大四下学期立即就业，不错过应届生身份",
+            ].map((line, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
+                <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#8b5cf6", marginTop: 8, flexShrink: 0, boxShadow: "0 0 6px rgba(139,92,246,0.6)" }} />
+                <span>{line}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* 承诺语 */}
+          <div
+            style={{
+              padding: "12px 16px",
+              borderRadius: 10,
+              background: "rgba(0,245,255,0.06)",
+              border: "1px solid rgba(0,245,255,0.15)",
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+            }}
+          >
+            <span style={{ fontSize: 16 }}>🤝</span>
+            <span style={{ fontSize: isMobile ? 13 : 14, color: "#00f5ff", fontWeight: 600 }}>
+              我们会一直陪伴你直到良好就业
+            </span>
           </div>
         </GlassCard>
       </div>
