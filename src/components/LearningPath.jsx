@@ -59,76 +59,74 @@ export default function LearningPath({ isMobile }) {
       </div>
 
       {/* 时间线 */}
-      <div style={{ maxWidth: 800, margin: "0 auto" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto", position: "relative" }}>
         {timeline.map((item, i) => (
-          <React.Fragment key={i}>
-            {/* 节点行 */}
-            <div style={{ display: "flex", gap: isMobile ? 16 : 28, alignItems: "flex-start" }}>
-              {/* 左侧节点 */}
-              <div
-                style={{
-                  width: isMobile ? 36 : 44,
-                  height: isMobile ? 36 : 44,
-                  borderRadius: "50%",
-                  background: `${item.color}18`,
-                  border: `2px solid ${item.color}50`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: isMobile ? 11 : 13,
-                  fontWeight: 700,
-                  color: item.color,
-                  boxShadow: `0 0 16px ${item.color}30`,
-                  flexShrink: 0,
-                }}
-              >
-                {item.year}
+          <div key={i} style={{ position: "relative" }}>
+            {/* 节点 + 卡片行 */}
+            <div style={{ display: "flex", gap: isMobile ? 16 : 28, alignItems: "flex-start", position: "relative", zIndex: 1 }}>
+              {/* 左侧节点列 */}
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0, width: isMobile ? 36 : 44 }}>
+                {/* 节点圆 */}
+                <div
+                  style={{
+                    width: isMobile ? 36 : 44,
+                    height: isMobile ? 36 : 44,
+                    borderRadius: "50%",
+                    background: `${item.color}18`,
+                    border: `2px solid ${item.color}50`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: isMobile ? 11 : 13,
+                    fontWeight: 700,
+                    color: item.color,
+                    boxShadow: `0 0 16px ${item.color}30`,
+                    flexShrink: 0,
+                    position: "relative",
+                    zIndex: 2,
+                  }}
+                >
+                  {item.year}
+                </div>
+
+                {/* 竖线（非最后一个节点） */}
+                {i < timeline.length - 1 && (
+                  <div
+                    style={{
+                      width: 2,
+                      height: isMobile ? 48 : 56,
+                      background: `linear-gradient(180deg, ${item.color}50, ${timeline[i + 1].color}50)`,
+                      marginTop: 0,
+                    }}
+                  />
+                )}
               </div>
 
               {/* 右侧卡片 */}
-              <GlassCard
-                hoverable
-                glowColor={i === 0 ? "cyan" : i === 1 ? "blue" : i === 2 ? "purple" : "green"}
-                style={{
-                  flex: 1,
-                  padding: isMobile ? "16px" : "20px 24px",
-                  borderLeft: `3px solid ${item.color}40`,
-                }}
-              >
-                <div style={{ fontSize: isMobile ? 16 : 18, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
-                  {item.title}
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                  {item.lines.map((line, li) => (
-                    <div key={li} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                      <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.color, marginTop: 8, flexShrink: 0, boxShadow: `0 0 6px ${item.color}60` }} />
-                      <span>{line}</span>
-                    </div>
-                  ))}
-                </div>
-              </GlassCard>
-            </div>
-
-            {/* 连接线行（非最后一个） */}
-            {i < timeline.length - 1 && (
-              <div style={{ display: "flex", paddingLeft: isMobile ? 16 : 20, marginBottom: isMobile ? 4 : 6, marginTop: isMobile ? 4 : 6 }}>
-                <div style={{ position: "relative", width: isMobile ? 8 : 12 }}>
-                  {/* 短虚线段 */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      width: 2,
-                      height: "100%",
-                      backgroundImage: `linear-gradient(to bottom, ${item.color}60 50%, transparent 50%)`,
-                      backgroundSize: "2px 8px",
-                    }}
-                  />
-                </div>
+              <div style={{ flex: 1, paddingTop: isMobile ? 4 : 6, marginBottom: isMobile ? 8 : 12 }}>
+                <GlassCard
+                  hoverable
+                  glowColor={i === 0 ? "cyan" : i === 1 ? "blue" : i === 2 ? "purple" : "green"}
+                  style={{
+                    padding: isMobile ? "16px" : "20px 24px",
+                    borderLeft: `3px solid ${item.color}40`,
+                  }}
+                >
+                  <div style={{ fontSize: isMobile ? 16 : 18, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
+                    {item.title}
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                    {item.lines.map((line, li) => (
+                      <div key={li} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
+                        <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.color, marginTop: 8, flexShrink: 0, boxShadow: `0 0 6px ${item.color}60` }} />
+                        <span>{line}</span>
+                      </div>
+                    ))}
+                  </div>
+                </GlassCard>
               </div>
-            )}
-          </React.Fragment>
+            </div>
+          </div>
         ))}
       </div>
 
