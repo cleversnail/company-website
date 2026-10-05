@@ -59,79 +59,94 @@ export default function LearningPath({ isMobile }) {
       </div>
 
       {/* 时间线 */}
-      <div style={{ maxWidth: 800, margin: "0 auto", position: "relative" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
         {timeline.map((item, i) => (
-          <div key={i} style={{ position: "relative" }}>
-            {/* 节点 + 卡片行 */}
-            <div style={{ display: "flex", gap: isMobile ? 16 : 28, alignItems: "flex-start", position: "relative", zIndex: 1 }}>
-              {/* 左侧节点列 */}
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0, width: isMobile ? 36 : 44 }}>
-                {/* 节点圆 */}
+          <div
+            key={i}
+            style={{
+              display: "flex",
+              gap: isMobile ? 16 : 28,
+              alignItems: "stretch", // 让左右两列等高
+            }}
+          >
+            {/* 左侧：节点圆 + 竖线 */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                flexShrink: 0,
+                width: isMobile ? 36 : 44,
+              }}
+            >
+              {/* 节点圆（固定在顶部） */}
+              <div
+                style={{
+                  width: isMobile ? 36 : 44,
+                  height: isMobile ? 36 : 44,
+                  borderRadius: "50%",
+                  background: `${item.color}18`,
+                  border: `2px solid ${item.color}50`,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: isMobile ? 11 : 13,
+                  fontWeight: 700,
+                  color: item.color,
+                  boxShadow: `0 0 16px ${item.color}30`,
+                  flexShrink: 0,
+                }}
+              >
+                {item.year}
+              </div>
+
+              {/* 竖线：自动撑满剩余高度（最后一个节点不显示） */}
+              {i < timeline.length - 1 && (
                 <div
                   style={{
-                    width: isMobile ? 36 : 44,
-                    height: isMobile ? 36 : 44,
-                    borderRadius: "50%",
-                    background: `${item.color}18`,
-                    border: `2px solid ${item.color}50`,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: isMobile ? 11 : 13,
-                    fontWeight: 700,
-                    color: item.color,
-                    boxShadow: `0 0 16px ${item.color}30`,
-                    flexShrink: 0,
-                    position: "relative",
-                    zIndex: 2,
+                    flex: 1,
+                    width: 2,
+                    marginTop: 4,
+                    background: `linear-gradient(180deg, ${item.color}50, ${timeline[i + 1].color}50)`,
+                    borderRadius: 1,
                   }}
-                >
-                  {item.year}
+                />
+              )}
+            </div>
+
+            {/* 右侧：卡片（顶部对齐） */}
+            <div style={{ flex: 1, paddingBottom: isMobile ? 20 : 28 }}>
+              <GlassCard
+                hoverable
+                glowColor={i === 0 ? "cyan" : i === 1 ? "blue" : i === 2 ? "purple" : "green"}
+                style={{
+                  padding: isMobile ? "16px" : "20px 24px",
+                  borderLeft: `3px solid ${item.color}40`,
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <div style={{ fontSize: isMobile ? 16 : 18, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
+                  {item.title}
                 </div>
-
-                {/* 竖线（非最后一个节点） */}
-                {i < timeline.length - 1 && (
-                  <div
-                    style={{
-                      width: 2,
-                      height: isMobile ? 80 : 100,
-                      background: `linear-gradient(180deg, ${item.color}50, ${timeline[i + 1].color}50)`,
-                      marginTop: 0,
-                    }}
-                  />
-                )}
-              </div>
-
-              {/* 右侧卡片 */}
-              <div style={{ flex: 1, paddingTop: isMobile ? 4 : 6, marginBottom: isMobile ? 8 : 12 }}>
-                <GlassCard
-                  hoverable
-                  glowColor={i === 0 ? "cyan" : i === 1 ? "blue" : i === 2 ? "purple" : "green"}
-                  style={{
-                    padding: isMobile ? "16px" : "20px 24px",
-                    borderLeft: `3px solid ${item.color}40`,
-                  }}
-                >
-                  <div style={{ fontSize: isMobile ? 16 : 18, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
-                    {item.title}
-                  </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                    {item.lines.map((line, li) => (
-                      <div key={li} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                        <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.color, marginTop: 8, flexShrink: 0, boxShadow: `0 0 6px ${item.color}60` }} />
-                        <span>{line}</span>
-                      </div>
-                    ))}
-                  </div>
-                </GlassCard>
-              </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  {item.lines.map((line, li) => (
+                    <div key={li} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: isMobile ? 13 : 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
+                      <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.color, marginTop: 8, flexShrink: 0, boxShadow: `0 0 6px ${item.color}60` }} />
+                      <span>{line}</span>
+                    </div>
+                  ))}
+                </div>
+              </GlassCard>
             </div>
           </div>
         ))}
       </div>
 
       {/* 考研规划（低年级同学） */}
-      <div style={{ maxWidth: 800, margin: "16px auto 0" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <GlassCard
           hoverable={false}
           style={{
