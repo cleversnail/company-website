@@ -13,8 +13,8 @@ import DrawerMenu from "./components/DrawerMenu";
 import LearningPath from "./components/LearningPath";
 import useResponsive from "./hooks/useResponsive";
 import "./components/student-ticker/StudentTicker.css";
-import logoImg from "./assets/images/logo-ai.png";
-import classImg from "./assets/images/class.jpg";
+import logoImg from "./assets/images/logo-ai.webp";
+import classImg from "./assets/images/class.webp";
 import config from "./config/siteConfig.json";
 
 const TechIcon = ({ type }) => {
@@ -132,7 +132,7 @@ function HomePage({ onNavigate, onShowQR, isMobile }) {
                     <span style={{ padding: "3px 10px", fontSize: 11, fontWeight: 600, borderRadius: 6, background: "rgba(0,255,136,0.1)", color: "#00ff88", border: "1px solid rgba(0,255,136,0.2)" }}>实战项目</span>
                   </div>
                   <span style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-mono)" }}>
-                    class.jpg
+                    class.webp
                   </span>
                 </div>
               </div>

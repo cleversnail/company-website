@@ -1,5 +1,5 @@
 import React from "react";
-import teacherQR from "../assets/images/teacher.png";
+import teacherQR from "../assets/images/teacher.webp";
 
 /**
  * TeacherQRModal

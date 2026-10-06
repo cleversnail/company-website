@@ -1,6 +1,6 @@
 import React from "react";
 import GlassCard from "./GlassCard";
-import teacherQR from "../assets/images/teacher.png";
+import teacherQR from "../assets/images/teacher.webp";
 import config from "../config/siteConfig.json";
 
 export default function AboutPage({ onShowQR, isMobile }) {

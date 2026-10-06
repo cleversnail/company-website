@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback } from "react";
 import GlassCard from "./GlassCard";
 import StudentPhotoWall from "./StudentPhotoWall";
 import config from "../config/siteConfig.json";
-import teacherQR from "../assets/images/teacher.png";
+import teacherQR from "../assets/images/teacher.webp";
 const studentsData = config.students;
 
 // ==================== 薪资弹窗 ====================

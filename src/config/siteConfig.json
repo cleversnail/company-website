@@ -43,7 +43,7 @@
     {
       "id": "stu_003",
       "name": "邹佳俊",
-      "avatar": "avatars/stu_ppt_036.jpg",
+      "avatar": "avatars/stu_ppt_036.webp",
       "school": "东华理工",
       "grade": "2024级",
       "company": "AI企业",
@@ -58,7 +58,7 @@
     {
       "id": "stu_001",
       "name": "饶肇俊",
-      "avatar": "avatars/stu_ppt_038.png",
+      "avatar": "avatars/stu_ppt_038.webp",
       "school": "江财",
       "grade": "2023级",
       "company": "来未来",
@@ -73,7 +73,7 @@
     {
       "id": "stu_002",
       "name": "曾哲辉",
-      "avatar": "avatars/stu_ppt_037.jpg",
+      "avatar": "avatars/stu_ppt_037.webp",
       "school": "江财",
       "grade": "2023级",
       "company": "AI企业",
@@ -88,7 +88,7 @@
     {
       "id": "stu_004",
       "name": "郑小君",
-      "avatar": "avatars/stu_ppt_044.png",
+      "avatar": "avatars/stu_ppt_044.webp",
       "school": "江财",
       "grade": "2024级",
       "company": "万界科技",
@@ -103,7 +103,7 @@
     {
       "id": "stu_005",
       "name": "王成",
-      "avatar": "avatars/stu_ppt_035.jpg",
+      "avatar": "avatars/stu_ppt_035.webp",
       "school": "江财",
       "grade": "2023级",
       "company": "AI企业",
@@ -148,7 +148,7 @@
     {
       "id": "stu_008",
       "name": "管芷潼",
-      "avatar": "avatars/stu_ppt_033.jpg",
+      "avatar": "avatars/stu_ppt_033.webp",
       "school": "江财",
       "grade": "2023级",
       "company": "TCL",
@@ -163,7 +163,7 @@
     {
       "id": "stu_009",
       "name": "邹嘉炜",
-      "avatar": "avatars/stu_ppt_034.jpg",
+      "avatar": "avatars/stu_ppt_034.webp",
       "school": "江财",
       "grade": "2023级",
       "company": "友趣汇通",
@@ -178,7 +178,7 @@
     {
       "id": "stu_010",
       "name": "辛典典",
-      "avatar": "avatars/stu_ppt_030.jpg",
+      "avatar": "avatars/stu_ppt_030.webp",
       "school": "江财",
       "grade": "2022级",
       "company": "智慧树",
@@ -193,7 +193,7 @@
     {
       "id": "stu_012",
       "name": "赖泽阳",
-      "avatar": "avatars/stu_ppt_031.jpg",
+      "avatar": "avatars/stu_ppt_031.webp",
       "school": "东理",
       "grade": "2022级",
       "company": "好未来",
@@ -208,7 +208,7 @@
     {
       "id": "stu_013",
       "name": "钟文城",
-      "avatar": "avatars/stu_ppt_028.jpg",
+      "avatar": "avatars/stu_ppt_028.webp",
       "school": "东理",
       "grade": "2022级",
       "company": "好未来",
@@ -223,7 +223,7 @@
     {
       "id": "stu_014",
       "name": "胡建华",
-      "avatar": "avatars/stu_ppt_027.png",
+      "avatar": "avatars/stu_ppt_027.webp",
       "school": "东理",
       "grade": "2022级",
       "company": "AI企业",
@@ -238,7 +238,7 @@
     {
       "id": "stu_015",
       "name": "钟俊",
-      "avatar": "avatars/stu_ppt_025.jpg",
+      "avatar": "avatars/stu_ppt_025.webp",
       "school": "江财",
       "grade": "2022级",
       "company": "法雷奥",
@@ -253,7 +253,7 @@
     {
       "id": "stu_016",
       "name": "廖世裕",
-      "avatar": "avatars/stu_ppt_024.jpg",
+      "avatar": "avatars/stu_ppt_024.webp",
       "school": "江财",
       "grade": "2022级",
       "company": "每日互动",
@@ -268,7 +268,7 @@
     {
       "id": "stu_017",
       "name": "熊宇航",
-      "avatar": "avatars/stu_ppt_023.jpg",
+      "avatar": "avatars/stu_ppt_023.webp",
       "school": "华东交通",
       "grade": "2022级",
       "company": "网易",
@@ -283,7 +283,7 @@
     {
       "id": "stu_ppt_010",
       "name": "艾安盛",
-      "avatar": "avatars/stu_ppt_010.png",
+      "avatar": "avatars/stu_ppt_010.webp",
       "school": "江西财经大学",
       "grade": "2022级",
       "company": "字节跳动",
@@ -298,7 +298,7 @@
     {
       "id": "stu_011",
       "name": "刘康宇",
-      "avatar": "avatars/stu_ppt_029.jpg",
+      "avatar": "avatars/stu_ppt_029.webp",
       "school": "东理",
       "grade": "2021级",
       "company": "字节跳动",
@@ -313,7 +313,7 @@
     {
       "id": "stu_018",
       "name": "肖宏涛",
-      "avatar": "avatars/stu_ppt_032.jpg",
+      "avatar": "avatars/stu_ppt_032.webp",
       "school": "东理",
       "grade": "2021级",
       "company": "AI企业",
@@ -328,7 +328,7 @@
     {
       "id": "stu_ppt_005",
       "name": "胡时海",
-      "avatar": "avatars/stu_ppt_005.png",
+      "avatar": "avatars/stu_ppt_005.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "字节跳动",
@@ -343,7 +343,7 @@
     {
       "id": "stu_ppt_006",
       "name": "衷丛健",
-      "avatar": "avatars/stu_ppt_006.png",
+      "avatar": "avatars/stu_ppt_006.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "字节跳动",
@@ -358,7 +358,7 @@
     {
       "id": "stu_ppt_007",
       "name": "罗昭发",
-      "avatar": "avatars/stu_ppt_007.png",
+      "avatar": "avatars/stu_ppt_007.webp",
       "school": "江西财经大学",
       "grade": "2021级",
       "company": "小米",
@@ -373,7 +373,7 @@
     {
       "id": "stu_ppt_008",
       "name": "王帆",
-      "avatar": "avatars/stu_ppt_008.png",
+      "avatar": "avatars/stu_ppt_008.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "蔚来",
@@ -388,7 +388,7 @@
     {
       "id": "stu_ppt_009",
       "name": "林康",
-      "avatar": "avatars/stu_ppt_009.jpg",
+      "avatar": "avatars/stu_ppt_009.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "好未来",
@@ -403,7 +403,7 @@
     {
       "id": "stu_ppt_011",
       "name": "况君豪",
-      "avatar": "avatars/stu_ppt_011.png",
+      "avatar": "avatars/stu_ppt_011.webp",
       "school": "江西财经大学",
       "grade": "2021级",
       "company": "字节跳动",
@@ -418,7 +418,7 @@
     {
       "id": "stu_ppt_012",
       "name": "胡铖杰",
-      "avatar": "avatars/stu_ppt_012.png",
+      "avatar": "avatars/stu_ppt_012.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "百度",
@@ -433,7 +433,7 @@
     {
       "id": "stu_ppt_013",
       "name": "周雨程",
-      "avatar": "avatars/stu_ppt_013.png",
+      "avatar": "avatars/stu_ppt_013.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "字节跳动",
@@ -448,7 +448,7 @@
     {
       "id": "stu_ppt_014",
       "name": "刘美华",
-      "avatar": "avatars/stu_ppt_014.png",
+      "avatar": "avatars/stu_ppt_014.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "百度",
@@ -463,7 +463,7 @@
     {
       "id": "stu_ppt_015",
       "name": "蔡铃江",
-      "avatar": "avatars/stu_ppt_015.png",
+      "avatar": "avatars/stu_ppt_015.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "百度",
@@ -478,7 +478,7 @@
     {
       "id": "stu_ppt_016",
       "name": "王志豪",
-      "avatar": "avatars/stu_ppt_016.png",
+      "avatar": "avatars/stu_ppt_016.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "好未来",
@@ -493,7 +493,7 @@
     {
       "id": "stu_ppt_017",
       "name": "龙茳",
-      "avatar": "avatars/stu_ppt_017.png",
+      "avatar": "avatars/stu_ppt_017.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "百度",
@@ -508,7 +508,7 @@
     {
       "id": "stu_ppt_018",
       "name": "肖启明",
-      "avatar": "avatars/stu_ppt_018.png",
+      "avatar": "avatars/stu_ppt_018.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "蔚来",
@@ -523,7 +523,7 @@
     {
       "id": "stu_ppt_019",
       "name": "黄斌",
-      "avatar": "avatars/stu_ppt_019.png",
+      "avatar": "avatars/stu_ppt_019.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "哈啰出行",
@@ -538,7 +538,7 @@
     {
       "id": "stu_ppt_020",
       "name": "万先澄",
-      "avatar": "avatars/stu_ppt_020.jpg",
+      "avatar": "avatars/stu_ppt_020.webp",
       "school": "东华理工大学",
       "grade": "2021级",
       "company": "百度",
@@ -553,7 +553,7 @@
     {
       "id": "stu_ppt_042",
       "name": "王雨轩",
-      "avatar": "avatars/stu_ppt_042.jpg",
+      "avatar": "avatars/stu_ppt_042.webp",
       "school": "江西财经大学",
       "grade": "2021级",
       "company": "保研东北大学",
@@ -568,7 +568,7 @@
     {
       "id": "stu_ppt_043",
       "name": "高莉婷",
-      "avatar": "avatars/stu_ppt_043.png",
+      "avatar": "avatars/stu_ppt_043.webp",
       "school": "江西财经大学",
       "grade": "2021级",
       "company": "保研苏州大学",
@@ -583,7 +583,7 @@
     {
       "id": "stu_ppt_021",
       "name": "徐阳阳",
-      "avatar": "avatars/stu_ppt_021.png",
+      "avatar": "avatars/stu_ppt_021.webp",
       "school": "东华理工大学",
       "grade": "2019级",
       "company": "滴滴",
@@ -662,7 +662,7 @@
     {
       "id": "stu_ppt_022",
       "name": "苏湘臻",
-      "avatar": "avatars/stu_ppt_022.png",
+      "avatar": "avatars/stu_ppt_022.webp",
       "school": "东华理工大学",
       "grade": "2019级",
       "company": "VIVO",
@@ -677,7 +677,7 @@
     {
       "id": "stu_ppt_040",
       "name": "计涛",
-      "avatar": "avatars/stu_ppt_040.png",
+      "avatar": "avatars/stu_ppt_040.webp",
       "school": "东华理工大学",
       "grade": "2019级",
       "company": "哈啰出行",
@@ -692,7 +692,7 @@
     {
       "id": "stu_ppt_041",
       "name": "王思琦",
-      "avatar": "avatars/stu_ppt_041.png",
+      "avatar": "avatars/stu_ppt_041.webp",
       "school": "东华理工大学",
       "grade": "2019级",
       "company": "快手",
@@ -707,7 +707,7 @@
     {
       "id": "stu_ppt_003",
       "name": "甘江华",
-      "avatar": "avatars/stu_ppt_003.png",
+      "avatar": "avatars/stu_ppt_003.webp",
       "school": "江西财经大学",
       "grade": "2017级",
       "company": "抖音",
@@ -723,7 +723,7 @@
     {
       "id": "stu_ppt_004",
       "name": "李浩楠",
-      "avatar": "avatars/stu_ppt_004.png",
+      "avatar": "avatars/stu_ppt_004.webp",
       "school": "江西财经大学",
       "grade": "2017级",
       "company": "腾讯",
@@ -738,7 +738,7 @@
     {
       "id": "stu_ppt_001",
       "name": "黄溪舟",
-      "avatar": "avatars/stu_ppt_001.png",
+      "avatar": "avatars/stu_ppt_001.webp",
       "school": "江西财经大学",
       "grade": "2015级",
       "company": "抖音",
@@ -753,7 +753,7 @@
     {
       "id": "stu_ppt_002",
       "name": "石勇",
-      "avatar": "avatars/stu_ppt_002.jpg",
+      "avatar": "avatars/stu_ppt_002.webp",
       "school": "江西财经大学",
       "grade": "2015级",
       "company": "拼多多",

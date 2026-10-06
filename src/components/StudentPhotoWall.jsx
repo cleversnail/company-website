@@ -88,6 +88,8 @@ function PhotoCard({ student, onShowSalary, onShowDetail, isMobile }) {
         >
           {student.avatar ? (
             <img
+              loading="lazy"
+              decoding="async"
               src={import.meta.env.BASE_URL + student.avatar}
               alt={maskName(student.name)}
               style={{
@@ -360,6 +362,8 @@ function PhotoDetailModal({ student, onClose, onShowSalary }) {
         >
           {student.avatar ? (
             <img
+              loading="lazy"
+              decoding="async"
               src={import.meta.env.BASE_URL + student.avatar}
               alt={maskName(student.name)}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}

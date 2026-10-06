@@ -30,6 +30,7 @@ export default function StudentCard({ student }) {
             src={import.meta.env.BASE_URL + avatar}
             alt={name || "学员头像"}
             loading="lazy"
+            decoding="async"
           />
         ) : (
           <div className="stu-card__avatar stu-card__avatar--fallback">
