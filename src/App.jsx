@@ -8,7 +8,6 @@ import TeacherQRModal from "./components/TeacherQRModal";
 import ServicePage from "./components/ServicePage";
 import AboutPage from "./components/AboutPage";
 import ResumeTemplatePage from "./components/ResumeTemplatePage";
-import resumePdf from "./assets/pdf/简历模板.pdf";
 import DrawerMenu from "./components/DrawerMenu";
 import LearningPath from "./components/LearningPath";
 import useResponsive from "./hooks/useResponsive";
@@ -259,7 +258,7 @@ export default function App() {
       {currentPage === "courses" && <CoursePage onShowQR={setQrModalVariant} isMobile={isMobile} />}
       {currentPage === "students" && <StudentPage onShowSalary={setSalaryModal} onShowQR={setQrModalVariant} isMobile={isMobile} />}
       {currentPage === "services" && <ServicePage onShowQR={setQrModalVariant} onNavigate={navigateTo} isMobile={isMobile} />}
-      {currentPage === "resume" && <ResumeTemplatePage pdfUrl={resumePdf} isMobile={isMobile} />}
+      {currentPage === "resume" && <ResumeTemplatePage pdfUrl={import.meta.env.BASE_URL + "pdf/简历模板.pdf"} isMobile={isMobile} />}
       {currentPage === "about" && <AboutPage onShowQR={setQrModalVariant} isMobile={isMobile} />}
 
       {salaryModal && <SalaryModal student={salaryModal} onClose={() => setSalaryModal(null)} />}
