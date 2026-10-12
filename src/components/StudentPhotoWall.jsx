@@ -253,9 +253,9 @@ function MasonryLayout({ children, columns = 4, gap = 24 }) {
   }, [children, columns]);
 
   return (
-    <div style={{ display: "flex", gap, alignItems: "flex-start" }}>
+    <div style={{ display: "flex", gap, alignItems: "flex-start", overflow: "hidden", maxWidth: "100%" }}>
       {columnArrays.map((col, i) => (
-        <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+        <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
           {col}
         </div>
       ))}

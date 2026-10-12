@@ -44,7 +44,7 @@ export default function TeacherQRModal({ onClose, variant = "group" }) {
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          width: 400,
+          width: "min(400px, 92vw)",
           background: "rgba(15, 15, 40, 0.95)",
           backdropFilter: "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
